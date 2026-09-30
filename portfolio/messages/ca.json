@@ -1,0 +1,62 @@
+{
+  "Navbar": {
+    "about": "Sobre mi",
+    "skills": "Tecnologies",
+    "experience": "Experiència",
+    "projects": "Projectes",
+    "contact": "Contacte"
+  },
+  "Hero": {
+    "greeting": "Hola, soc",
+    "name": "Joel Toribio",
+    "role": "Full Stack Developer",
+    "description": "Desenvolupo aplicacions web modernes, escalables i centrades a oferir una bona experiència d'usuari.",
+    "viewProjects": "Veure projectes",
+    "contactMe": "Contactar amb mi",
+    "available": "Disponible per a nous projectes",
+    "scroll": "Descobreix el meu treball"
+  },
+  "About": {
+    "title": "Sobre mi",
+    "description": "Soc desenvolupador Full Stack i estudiant de Desenvolupament d'Aplicacions Web. M'interessa crear aplicacions útils, ben estructurades i fàcils de mantenir.",
+    "description2": "Treballo principalment amb Java, Spring Boot, TypeScript, React, Next.js, NestJS i bases de dades SQL.",
+    "cleanCode": "Codi organitzat i fàcil de mantenir.",
+    "fullStack": "Frontend, backend i APIs.",
+    "data": "SQL, MySQL i gestió de dades."
+  },
+  "Skills": {
+    "title": "Tecnologies",
+    "subtitle": "Tecnologies amb les quals treballo habitualment",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Bases de dades i eines"
+  },
+  "Experience": {
+    "title": "Experiència",
+    "subtitle": "La meva trajectòria en el desenvolupament de programari",
+    "fullstack": "Full Stack Developer",
+    "current": "Actualitat",
+    "description": "Desenvolupament i manteniment d'aplicacions web utilitzant tecnologies frontend i backend."
+  },
+  "Projects": {
+    "title": "Projectes",
+    "subtitle": "Alguns dels projectes en què he treballat",
+    "viewProject": "Veure projecte",
+    "viewCode": "Veure codi",
+    "planner": "Planner",
+    "plannerDescription": "Aplicació web per a la gestió i planificació de tasques i tècnics.",
+    "pricePoster": "Price Poster",
+    "pricePosterDescription": "Aplicació per gestionar i generar cartells de preus.",
+    "api": "Spring Boot API",
+    "apiDescription": "API REST desenvolupada amb Java, Spring Boot, JPA, MySQL i autenticació JWT."
+  },
+  "Contact": {
+    "title": "En parlem?",
+    "description": "Si tens un projecte, una proposta o simplement vols contactar amb mi, pots escriure'm.",
+    "email": "Enviar email"
+  },
+  "Footer": {
+    "rights": "Tots els drets reservats.",
+    "builtWith": "Construït amb Next.js i Chakra UI"
+  }
+}

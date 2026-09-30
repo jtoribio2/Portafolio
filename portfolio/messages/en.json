@@ -1,0 +1,62 @@
+{
+  "Navbar": {
+    "about": "About me",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "Hero": {
+    "greeting": "Hi, I'm",
+    "name": "Joel Toribio",
+    "role": "Full Stack Developer",
+    "description": "I build modern, scalable web applications focused on delivering a great user experience.",
+    "viewProjects": "View projects",
+    "contactMe": "Contact me",
+    "available": "Available for new projects",
+    "scroll": "Discover my work"
+  },
+  "About": {
+    "title": "About me",
+    "description": "I'm a Full Stack Developer and Web Application Development student. I enjoy building useful, well-structured and maintainable applications.",
+    "description2": "I mainly work with Java, Spring Boot, TypeScript, React, Next.js, NestJS and SQL databases.",
+    "cleanCode": "Organized and maintainable code.",
+    "fullStack": "Frontend, backend and APIs.",
+    "data": "SQL, MySQL and data management."
+  },
+  "Skills": {
+    "title": "Technologies",
+    "subtitle": "Technologies I work with regularly",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Databases and tools"
+  },
+  "Experience": {
+    "title": "Experience",
+    "subtitle": "My journey in software development",
+    "fullstack": "Full Stack Developer",
+    "current": "Present",
+    "description": "Development and maintenance of web applications using frontend and backend technologies."
+  },
+  "Projects": {
+    "title": "Projects",
+    "subtitle": "Some of the projects I've worked on",
+    "viewProject": "View project",
+    "viewCode": "View code",
+    "planner": "Planner",
+    "plannerDescription": "Web application for task and technician management and planning.",
+    "pricePoster": "Price Poster",
+    "pricePosterDescription": "Application for managing and generating price posters.",
+    "api": "Spring Boot API",
+    "apiDescription": "REST API built with Java, Spring Boot, JPA, MySQL and JWT authentication."
+  },
+  "Contact": {
+    "title": "Let's talk",
+    "description": "If you have a project, an opportunity or simply want to get in touch, feel free to contact me.",
+    "email": "Send email"
+  },
+  "Footer": {
+    "rights": "All rights reserved.",
+    "builtWith": "Built with Next.js and Chakra UI"
+  }
+}

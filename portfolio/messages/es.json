@@ -1,0 +1,62 @@
+{
+  "Navbar": {
+    "about": "Sobre mí",
+    "skills": "Tecnologías",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "Hero": {
+    "greeting": "Hola, soy",
+    "name": "Joel Toribio",
+    "role": "Full Stack Developer",
+    "description": "Desarrollo aplicaciones web modernas, escalables y centradas en ofrecer una buena experiencia de usuario.",
+    "viewProjects": "Ver proyectos",
+    "contactMe": "Contactar conmigo",
+    "available": "Disponible para nuevos proyectos",
+    "scroll": "Descubre mi trabajo"
+  },
+  "About": {
+    "title": "Sobre mí",
+    "description": "Soy desarrollador Full Stack y estudiante de Desarrollo de Aplicaciones Web. Me interesa crear aplicaciones útiles, bien estructuradas y fáciles de mantener.",
+    "description2": "Trabajo principalmente con Java, Spring Boot, TypeScript, React, Next.js, NestJS y bases de datos SQL.",
+    "cleanCode": "Código organizado y fácil de mantener.",
+    "fullStack": "Frontend, backend y APIs.",
+    "data": "SQL, MySQL y gestión de datos."
+  },
+  "Skills": {
+    "title": "Tecnologías",
+    "subtitle": "Tecnologías con las que trabajo habitualmente",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Bases de datos y herramientas"
+  },
+  "Experience": {
+    "title": "Experiencia",
+    "subtitle": "Mi trayectoria en el desarrollo de software",
+    "fullstack": "Full Stack Developer",
+    "current": "Actualidad",
+    "description": "Desarrollo y mantenimiento de aplicaciones web utilizando tecnologías frontend y backend."
+  },
+  "Projects": {
+    "title": "Proyectos",
+    "subtitle": "Algunos de los proyectos en los que he trabajado",
+    "viewProject": "Ver proyecto",
+    "viewCode": "Ver código",
+    "planner": "Planner",
+    "plannerDescription": "Aplicación web para la gestión y planificación de tareas y técnicos.",
+    "pricePoster": "Price Poster",
+    "pricePosterDescription": "Aplicación para gestionar y generar carteles de precios.",
+    "api": "Spring Boot API",
+    "apiDescription": "API REST desarrollada con Java, Spring Boot, JPA, MySQL y autenticación JWT."
+  },
+  "Contact": {
+    "title": "¿Hablamos?",
+    "description": "Si tienes un proyecto, una propuesta o simplemente quieres contactar conmigo, puedes escribirme.",
+    "email": "Enviar email"
+  },
+  "Footer": {
+    "rights": "Todos los derechos reservados.",
+    "builtWith": "Construido con Next.js y Chakra UI"
+  }
+}
