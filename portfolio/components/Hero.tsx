@@ -16,11 +16,24 @@ import { motion } from "motion/react";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useTranslations } from "next-intl";
+import { useColorMode } from "@/components/ui/color-mode";
+import { useSyncExternalStore } from "react";
 
 const MotionBox = motion.create(Box);
 
+const emptySubscribe = () => () => {};
+
 export default function Hero() {
   const t = useTranslations("Hero");
+  const { colorMode } = useColorMode();
+
+  const mounted = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
+
+  const isDark = mounted && colorMode === "dark";
 
   return (
     <Box
@@ -40,7 +53,7 @@ export default function Hero() {
         w="600px"
         h="600px"
         borderRadius="full"
-        bg="whiteAlpha.50"
+        bg={isDark ? "whiteAlpha.50" : "blackAlpha.50"}
         filter="blur(100px)"
       />
 
@@ -51,7 +64,7 @@ export default function Hero() {
         w="500px"
         h="500px"
         borderRadius="full"
-        bg="whiteAlpha.30"
+        bg={isDark ? "whiteAlpha.30" : "blackAlpha.30"}
         filter="blur(120px)"
       />
 
@@ -86,8 +99,16 @@ export default function Hero() {
                 py={1.5}
                 borderRadius="full"
                 variant="outline"
-                color="gray.300"
-                borderColor="whiteAlpha.200"
+                color={
+                  isDark
+                    ? "gray.300"
+                    : "gray.700"
+                }
+                borderColor={
+                  isDark
+                    ? "whiteAlpha.200"
+                    : "blackAlpha.300"
+                }
                 fontSize="xs"
               >
                 <Box
@@ -107,15 +128,25 @@ export default function Hero() {
             {/* Nombre */}
 
             <MotionBox
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{
+                opacity: 0,
+                y: 25,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
               transition={{
                 duration: 0.7,
                 delay: 0.1,
               }}
             >
               <Text
-                color="gray.400"
+                color={
+                  isDark
+                    ? "gray.400"
+                    : "gray.700"
+                }
                 fontSize={{
                   base: "lg",
                   md: "xl",
@@ -134,6 +165,11 @@ export default function Hero() {
                 }}
                 lineHeight="0.9"
                 letterSpacing="-0.06em"
+                color={
+                  isDark
+                    ? "white"
+                    : "gray.900"
+                }
               >
                 {t("name")}
               </Heading>
@@ -160,7 +196,11 @@ export default function Hero() {
                   base: "2xl",
                   md: "4xl",
                 }}
-                color="gray.500"
+                color={
+                  isDark
+                    ? "gray.500"
+                    : "gray.700"
+                }
                 fontWeight="500"
                 letterSpacing="-0.03em"
               >
@@ -186,7 +226,11 @@ export default function Hero() {
             >
               <Text
                 maxW="620px"
-                color="gray.400"
+                color={
+                  isDark
+                    ? "gray.400"
+                    : "gray.700"
+                }
                 fontSize={{
                   base: "md",
                   md: "lg",
@@ -225,13 +269,24 @@ export default function Hero() {
                 >
                   <Button
                     size="lg"
-                    bg="white"
-                    color="black"
+                    bg={
+                      isDark
+                        ? "white"
+                        : "gray.900"
+                    }
+                    color={
+                      isDark
+                        ? "black"
+                        : "white"
+                    }
                     borderRadius="full"
                     px={6}
                     _hover={{
-                      bg: "gray.200",
-                      transform: "translateY(-2px)",
+                      bg: isDark
+                        ? "gray.200"
+                        : "gray.700",
+                      transform:
+                        "translateY(-2px)",
                     }}
                     transition="all 0.2s"
                   >
@@ -250,13 +305,23 @@ export default function Hero() {
                   <Button
                     size="lg"
                     variant="outline"
-                    borderColor="whiteAlpha.200"
-                    color="white"
+                    borderColor={
+                      isDark
+                        ? "whiteAlpha.200"
+                        : "blackAlpha.300"
+                    }
+                    color={
+                      isDark
+                        ? "white"
+                        : "gray.900"
+                    }
+                    _hover={{
+                      bg: isDark
+                        ? "whiteAlpha.100"
+                        : "blackAlpha.100",
+                    }}
                     borderRadius="full"
                     px={6}
-                    _hover={{
-                      bg: "whiteAlpha.100",
-                    }}
                   >
                     {t("contactMe")}
                   </Button>
@@ -274,9 +339,15 @@ export default function Hero() {
                 href="https://github.com/jtoribio2"
                 target="_blank"
                 rel="noopener noreferrer"
-                color="gray.500"
+                color={
+                  isDark
+                    ? "gray.500"
+                    : "gray.700"
+                }
                 _hover={{
-                  color: "white",
+                  color: isDark
+                    ? "white"
+                    : "black",
                 }}
                 transition="color 0.2s"
               >
@@ -287,9 +358,15 @@ export default function Hero() {
                 href="https://www.linkedin.com/in/joel-toribio-palomino-797017428/"
                 target="_blank"
                 rel="noopener noreferrer"
-                color="gray.500"
+                color={
+                  isDark
+                    ? "gray.500"
+                    : "gray.700"
+                }
                 _hover={{
-                  color: "white",
+                  color: isDark
+                    ? "white"
+                    : "black",
                 }}
                 transition="color 0.2s"
               >
@@ -322,12 +399,24 @@ export default function Hero() {
               w="380px"
               h="300px"
               border="1px solid"
-              borderColor="whiteAlpha.100"
+              borderColor={
+                isDark
+                  ? "whiteAlpha.100"
+                  : "blackAlpha.300"
+              }
               borderRadius="2xl"
-              bg="whiteAlpha.30"
+              bg={
+                isDark
+                  ? "whiteAlpha.30"
+                  : "blackAlpha.50"
+              }
               backdropFilter="blur(20px)"
               p={5}
-              boxShadow="0 25px 80px rgba(0,0,0,0.4)"
+              boxShadow={
+                isDark
+                  ? "0 25px 80px rgba(0,0,0,0.4)"
+                  : "0 25px 80px rgba(0,0,0,0.12)"
+              }
             >
               {/* Barra terminal */}
 
@@ -360,7 +449,11 @@ export default function Hero() {
               <Text
                 fontFamily="mono"
                 fontSize="sm"
-                color="gray.500"
+                color={
+                  isDark
+                    ? "gray.500"
+                    : "gray.700"
+                }
                 mb={2}
               >
                 joel@portfolio:~$
@@ -369,12 +462,16 @@ export default function Hero() {
               <Text
                 fontFamily="mono"
                 fontSize="sm"
-                color="gray.300"
+                color={
+                  isDark
+                    ? "gray.300"
+                    : "gray.800"
+                }
                 lineHeight="2"
               >
                 <Text
                   as="span"
-                  color="green.400"
+                  color="green.500"
                 >
                   $
                 </Text>{" "}
@@ -383,7 +480,11 @@ export default function Hero() {
 
                 <Text
                   as="span"
-                  color="gray.500"
+                  color={
+                    isDark
+                      ? "gray.500"
+                      : "gray.700"
+                  }
                 >
                   Full Stack Developer
                 </Text>
@@ -393,7 +494,7 @@ export default function Hero() {
 
                 <Text
                   as="span"
-                  color="green.400"
+                  color="green.500"
                 >
                   $
                 </Text>{" "}
@@ -402,7 +503,11 @@ export default function Hero() {
 
                 <Text
                   as="span"
-                  color="gray.500"
+                  color={
+                    isDark
+                      ? "gray.500"
+                      : "gray.700"
+                  }
                 >
                   Java · React · Next.js
                   <br />
@@ -414,7 +519,7 @@ export default function Hero() {
 
                 <Text
                   as="span"
-                  color="green.400"
+                  color="green.500"
                 >
                   $
                 </Text>{" "}
@@ -423,7 +528,7 @@ export default function Hero() {
 
                 <Text
                   as="span"
-                  color="green.400"
+                  color="green.500"
                 >
                   ● ready_to_build
                 </Text>
