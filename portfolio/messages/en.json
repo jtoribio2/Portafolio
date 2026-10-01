@@ -1,104 +1,220 @@
 {
   "Navbar": {
-    "about": "Sobre mi",
-    "skills": "Tecnologies",
-    "experience": "Experiència",
-    "projects": "Projectes",
-    "contact": "Contacte"
+    "about": "About me",
+    "skills": "Technologies",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
   },
+
   "Hero": {
-    "greeting": "Hola, soc",
+    "greeting": "Hi, I'm",
     "name": "Joel Toribio",
     "role": "Full Stack Developer",
-    "description": "Desenvolupo aplicacions web modernes, escalables i centrades a oferir una bona experiència d'usuari.",
-    "viewProjects": "Veure projectes",
-    "contactMe": "Contactar amb mi",
-    "available": "Disponible per a nous projectes",
-    "scroll": "Descobreix el meu treball"
+    "description": "I develop modern, scalable web applications focused on providing a great user experience.",
+    "viewProjects": "View projects",
+    "contactMe": "Contact me",
+    "available": "Available for new projects",
+    "scroll": "Discover my work"
   },
+
   "About": {
-    "title": "Sobre mi",
-    "description": "Soc desenvolupador Full Stack i estudiant de Desenvolupament d'Aplicacions Web. M'interessa crear aplicacions útils, ben estructurades i fàcils de mantenir.",
-    "description2": "Treballo principalment amb Java, Spring Boot, TypeScript, React, Next.js, NestJS i bases de dades SQL.",
-    "cleanCode": "Codi organitzat i fàcil de mantenir.",
-    "fullStack": "Frontend, backend i APIs.",
-    "data": "SQL, MySQL i gestió de dades."
+    "title": "About me",
+    "description": "I'm a Full Stack Developer and a Web Application Development student. I'm interested in creating useful, well-structured and maintainable applications.",
+    "description2": "I mainly work with Java, Spring Boot, TypeScript, React, Next.js, NestJS and SQL databases.",
+    "cleanCode": "Organized and maintainable code.",
+    "fullStack": "Frontend, backend and APIs.",
+    "data": "SQL, MySQL and data management."
   },
+
   "Skills": {
-    "title": "Tecnologies",
-    "subtitle": "Tecnologies i eines que he utilitzat durant la meva formació i projectes",
+    "title": "Technologies",
+    "subtitle": "Technologies and tools I have used throughout my education and projects",
     "frontend": "Frontend",
     "backend": "Backend",
-    "databases": "Bases de dades",
-    "tools": "Eines i disseny"
+    "databases": "Databases",
+    "tools": "Tools and design"
   },
+
   "Experience": {
-    "title": "Experiència",
-    "subtitle": "La meva trajectòria en el desenvolupament de programari",
+    "title": "Experience",
+    "subtitle": "My journey in software development",
     "fullstack": "Full Stack Developer",
-    "current": "Actualitat",
-    "description": "Desenvolupament i manteniment d'aplicacions web utilitzant tecnologies frontend i backend."
+    "current": "Present",
+    "description": "Development and maintenance of web applications using frontend and backend technologies."
   },
+
   "Projects": {
-    "title": "Projectes",
-    "subtitle": "Alguns dels projectes en què he treballat",
-    "viewProject": "Veure projecte",
-    "viewCode": "Veure codi",
+    "title": "Projects",
+    "subtitle": "Some of the projects I have worked on",
+
+    "viewProject": "View project",
+    "viewCode": "View code",
     "privateProject": "Internal project",
     "close": "Close",
+
     "planner": "Planner",
-    "plannerDescription": "Aplicació web per a la gestió i planificació de tasques i tècnics.",
+    "plannerDescription": "Internal web application for planning and managing tasks and technicians.",
+
+    "plannerDetails": {
+      "description": "Internal application focused on technician planning and daily task management. I have worked on both frontend and backend features related to the calendar, tasks, conflicts, clients, users and vacations.",
+
+      "myWork": "My work",
+
+      "myWorkDescription": "Development of both frontend and backend features across different areas of the application.",
+
+      "areas": {
+        "calendar": {
+          "title": "Calendar and tasks",
+          "description": "Development and improvement of features related to task planning and management.",
+          "features": [
+            "Cloning tasks across different time slots.",
+            "Time management with 15-minute intervals.",
+            "Warnings when creating tasks on past dates.",
+            "Individual task publishing.",
+            "Marking and unmarking tasks as completed.",
+            "Daily task summary.",
+            "Keyboard navigation through the calendar."
+          ]
+        },
+
+        "conflicts": {
+          "title": "Conflict resolution",
+          "description": "System for detecting and resolving conflicts between tasks and users before completing an operation.",
+          "features": [
+            "Detection of busy users.",
+            "Identification of the task causing the conflict.",
+            "Individual resolution of each conflict.",
+            "Ability to remove users from conflicting tasks.",
+            "Applying the resolution once all conflicts have been managed.",
+            "Support for creating, moving, cloning, resizing and modifying tasks."
+          ]
+        },
+
+        "clients": {
+          "title": "Clients and users",
+          "description": "Development of features for managing clients and users, including forms, validations, search and sorting.",
+          "features": [
+            "Creation of client profiles.",
+            "Email, phone, NIF and IBAN validation.",
+            "Unified search for clients and systems.",
+            "Dynamic sorting of clients and users.",
+            "Reusable component for sorting tables.",
+            "Improvements and fixes in user management."
+          ]
+        },
+
+        "vacations": {
+          "title": "Vacations and absences",
+          "description": "Integration of vacation and absence management with task planning.",
+          "features": [
+            "Vacation requests.",
+            "Request and approval statuses.",
+            "Detection of conflicts between vacations and tasks.",
+            "Vacation assignment with conflict resolution.",
+            "Specific dialogs for resolving conflicts.",
+            "Displaying vacations on the calendar.",
+            "Protection of tasks related to absences."
+          ]
+        },
+
+        "ux": {
+          "title": "User experience",
+          "description": "Improvements aimed at making the application clearer, more consistent and easier to use.",
+          "features": [
+            "Complete task preview.",
+            "Improvements to the task reading dialog.",
+            "Technician team management.",
+            "Fixes for display and overflow issues.",
+            "More descriptive error messages.",
+            "Visual improvements to tables and the calendar.",
+            "Internationalization using next-intl.",
+            "Reusable components to reduce duplication."
+          ]
+        }
+      },
+
+      "highlights": {
+        "conflictSystem": {
+          "title": "Conflict system",
+          "description": "Interactive system for detecting and resolving planning conflicts before completing an operation."
+        },
+
+        "dailySummary": {
+          "title": "Daily summary",
+          "description": "Centralized view to check a technician's tasks and their status for a specific day."
+        },
+
+        "vacationManagement": {
+          "title": "Vacation management",
+          "description": "Integration between vacations, absences and planning to prevent assignment conflicts."
+        },
+
+        "clientManagement": {
+          "title": "Client management",
+          "description": "Client profiles with validations, unified search and additional information management."
+        }
+      }
+    },
+
     "pricePoster": "Price Poster",
-    "pricePosterDescription": "Aplicació per gestionar i generar cartells de preus.",
+    "pricePosterDescription": "Application for managing and generating price posters.",
+
     "api": "Spring Boot API",
-    "apiDescription": "API REST desenvolupada amb Java, Spring Boot, JPA, MySQL i autenticació JWT.",
+    "apiDescription": "REST API developed with Java, Spring Boot, JPA, MySQL and JWT authentication.",
+
     "climbing": "Climbing API",
-    "climbingDescription": "Projecte de gestió de vies d'escalada desenvolupat amb Java i JDBC, posteriorment ampliat amb una API REST per consultar i consumir les dades."
+    "climbingDescription": "Climbing route management project developed with Java and JDBC, later expanded with a REST API to query and consume the data."
   },
+
   "Contact": {
-    "title": "En parlem?",
-    "description": "Si tens un projecte, una proposta o simplement vols contactar amb mi, pots escriure'm.",
-    "email": "Enviar email"
+    "title": "Let's talk?",
+    "description": "If you have a project, a proposal or simply want to get in touch with me, feel free to write to me.",
+    "email": "Send email"
   },
+
   "Footer": {
-    "rights": "Tots els drets reservats.",
-    "builtWith": "Construït amb Next.js i Chakra UI"
+    "rights": "All rights reserved.",
+    "builtWith": "Built with Next.js and Chakra UI"
   },
+
   "Game": {
-    "section": "MINI JOC",
-    "description": "Un petit joc creat amb React i TypeScript.",
-    "score": "PUNTUACIÓ",
-    "speed": "VELOCITAT",
-    "soundOn": "Activar so",
-    "soundOff": "Silenciar música",
-    "ready": "Preparat?",
-    "play": "Jugar",
+    "section": "MINI GAME",
+    "description": "A small game created with React and TypeScript.",
+    "score": "SCORE",
+    "speed": "SPEED",
+    "soundOn": "Enable sound",
+    "soundOff": "Mute music",
+    "ready": "Ready?",
+    "play": "Play",
     "gameOver": "GAME OVER",
-    "points": "{score} punts",
-    "playAgain": "Tornar a jugar",
-    "controls": "ESPAI per saltar · Clic per saltar"
+    "points": "{score} points",
+    "playAgain": "Play again",
+    "controls": "SPACE to jump · Click to jump"
   },
+
   "ThemeSelector": {
-    "ariaLabel": "Canviar la paleta de colors",
-    "title": "Tema de color",
+    "ariaLabel": "Change color palette",
+    "title": "Color theme",
+
     "themes": {
-      "obsidian": "Obsidiana",
-      "ocean": "Oceà",
-      "violet": "Violeta",
-      "emerald": "Esmeralda",
-      "amber": "Àmbar",
-      "minimal": "Minimalista",
-      "graphite": "Grafit",
-      "crimson": "Carmesí",
-      "rose": "Rosa",
-      "cyber": "Ciber",
-      "midnight": "Mitjanit",
-      "teal": "Turquesa",
-      "copper": "Coure",
-      "slate": "Pissarra",
-      "lime": "Llima",
-      "sky": "Cel",
-      "mono": "Monocrom"
+      "obsidian": "Obsidian",
+      "ocean": "Ocean",
+      "violet": "Violet",
+      "emerald": "Emerald",
+      "amber": "Amber",
+      "minimal": "Minimal",
+      "graphite": "Graphite",
+      "crimson": "Crimson",
+      "rose": "Rose",
+      "cyber": "Cyber",
+      "midnight": "Midnight",
+      "teal": "Teal",
+      "copper": "Copper",
+      "slate": "Slate",
+      "lime": "Lime",
+      "sky": "Sky",
+      "mono": "Monochrome"
     }
   }
 }
