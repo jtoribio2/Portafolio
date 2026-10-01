@@ -23,7 +23,9 @@ export default function About() {
       id="about"
       py={{ base: 24, md: 32 }}
       borderTop="1px solid"
-      borderColor="whiteAlpha.100"
+      borderColor="var(--border)"
+      bg="var(--background)"
+      color="var(--foreground)"
     >
       <Container maxW="1200px">
         <Flex
@@ -31,10 +33,11 @@ export default function About() {
           gap={{ base: 10, lg: 24 }}
           align="flex-start"
         >
+          {/* Título */}
           <Box minW={{ lg: "300px" }}>
             <Text
               fontSize="sm"
-              color="gray.600"
+              color="var(--muted)"
               mb={3}
               fontFamily="mono"
             >
@@ -47,16 +50,19 @@ export default function About() {
                 md: "5xl",
               }}
               letterSpacing="-0.04em"
+              color="var(--foreground)"
             >
               {t("title")}
             </Heading>
           </Box>
 
+          {/* Contenido */}
           <VStack
             align="start"
             gap={6}
             maxW="700px"
           >
+            {/* Descripción principal */}
             <MotionBox
               initial={{
                 opacity: 0,
@@ -75,7 +81,7 @@ export default function About() {
               }}
             >
               <Text
-                color="gray.300"
+                color="var(--foreground)"
                 fontSize={{
                   base: "lg",
                   md: "xl",
@@ -86,6 +92,7 @@ export default function About() {
               </Text>
             </MotionBox>
 
+            {/* Segunda descripción */}
             <MotionBox
               initial={{
                 opacity: 0,
@@ -105,7 +112,7 @@ export default function About() {
               }}
             >
               <Text
-                color="gray.500"
+                color="var(--muted)"
                 fontSize="md"
                 lineHeight="1.8"
               >
@@ -113,6 +120,7 @@ export default function About() {
               </Text>
             </MotionBox>
 
+            {/* Características */}
             <SimpleGrid
               columns={{
                 base: 1,
@@ -122,21 +130,28 @@ export default function About() {
               w="full"
               pt={4}
             >
+              {/* Clean Code */}
               <Box
                 p={5}
                 border="1px solid"
-                borderColor="whiteAlpha.100"
+                borderColor="var(--border)"
                 borderRadius="xl"
-                bg="whiteAlpha.30"
+                bg="var(--background)"
+                transition="all 0.3s ease"
+                _hover={{
+                  borderColor: "var(--accent)",
+                  transform: "translateY(-3px)",
+                }}
               >
                 <Code2
                   size={22}
-                  color="#a1a1aa"
+                  color="var(--accent)"
                 />
 
                 <Text
                   mt={4}
                   fontWeight="600"
+                  color="var(--foreground)"
                 >
                   Clean Code
                 </Text>
@@ -144,27 +159,35 @@ export default function About() {
                 <Text
                   mt={2}
                   fontSize="sm"
-                  color="gray.500"
+                  color="var(--muted)"
+                  lineHeight="1.6"
                 >
                   {t("cleanCode")}
                 </Text>
               </Box>
 
+              {/* Full Stack */}
               <Box
                 p={5}
                 border="1px solid"
-                borderColor="whiteAlpha.100"
+                borderColor="var(--border)"
                 borderRadius="xl"
-                bg="whiteAlpha.30"
+                bg="var(--background)"
+                transition="all 0.3s ease"
+                _hover={{
+                  borderColor: "var(--accent)",
+                  transform: "translateY(-3px)",
+                }}
               >
                 <Layers3
                   size={22}
-                  color="#a1a1aa"
+                  color="var(--accent)"
                 />
 
                 <Text
                   mt={4}
                   fontWeight="600"
+                  color="var(--foreground)"
                 >
                   Full Stack
                 </Text>
@@ -172,27 +195,35 @@ export default function About() {
                 <Text
                   mt={2}
                   fontSize="sm"
-                  color="gray.500"
+                  color="var(--muted)"
+                  lineHeight="1.6"
                 >
                   {t("fullStack")}
                 </Text>
               </Box>
 
+              {/* Data */}
               <Box
                 p={5}
                 border="1px solid"
-                borderColor="whiteAlpha.100"
+                borderColor="var(--border)"
                 borderRadius="xl"
-                bg="whiteAlpha.30"
+                bg="var(--background)"
+                transition="all 0.3s ease"
+                _hover={{
+                  borderColor: "var(--accent)",
+                  transform: "translateY(-3px)",
+                }}
               >
                 <Database
                   size={22}
-                  color="#a1a1aa"
+                  color="var(--accent)"
                 />
 
                 <Text
                   mt={4}
                   fontWeight="600"
+                  color="var(--foreground)"
                 >
                   Data
                 </Text>
@@ -200,7 +231,8 @@ export default function About() {
                 <Text
                   mt={2}
                   fontSize="sm"
-                  color="gray.500"
+                  color="var(--muted)"
+                  lineHeight="1.6"
                 >
                   {t("data")}
                 </Text>
