@@ -6,6 +6,7 @@
     "projects": "Proyectos",
     "contact": "Contacto"
   },
+
   "Hero": {
     "greeting": "Hola, soy",
     "name": "Joel Toribio",
@@ -16,6 +17,7 @@
     "available": "Disponible para nuevos proyectos",
     "scroll": "Descubre mi trabajo"
   },
+
   "About": {
     "title": "Sobre mí",
     "description": "Soy desarrollador Full Stack y estudiante de Desarrollo de Aplicaciones Web. Me interesa crear aplicaciones útiles, bien estructuradas y fáciles de mantener.",
@@ -24,13 +26,16 @@
     "fullStack": "Frontend, backend y APIs.",
     "data": "SQL, MySQL y gestión de datos."
   },
+
   "Skills": {
     "title": "Tecnologías",
-    "subtitle": "Tecnologías con las que trabajo habitualmente",
+    "subtitle": "Tecnologías y herramientas que he utilizado durante mi formación y proyectos",
     "frontend": "Frontend",
     "backend": "Backend",
-    "database": "Bases de datos y herramientas"
+    "databases": "Bases de datos",
+    "tools": "Herramientas y diseño"
   },
+
   "Experience": {
     "title": "Experiencia",
     "subtitle": "Mi trayectoria en el desarrollo de software",
@@ -38,25 +43,176 @@
     "current": "Actualidad",
     "description": "Desarrollo y mantenimiento de aplicaciones web utilizando tecnologías frontend y backend."
   },
+
   "Projects": {
     "title": "Proyectos",
     "subtitle": "Algunos de los proyectos en los que he trabajado",
+
     "viewProject": "Ver proyecto",
     "viewCode": "Ver código",
+    "privateProject": "Proyecto interno",
+    "close": "Cerrar",
+
     "planner": "Planner",
-    "plannerDescription": "Aplicación web para la gestión y planificación de tareas y técnicos.",
+    "plannerDescription": "Aplicación web interna para la planificación y gestión de tareas y técnicos.",
+
+    "plannerDetails": {
+      "description": "Aplicación interna orientada a la planificación de técnicos y la gestión diaria de tareas. He trabajado en funcionalidades tanto de frontend como de backend relacionadas con el calendario, las tareas, los conflictos, clientes, usuarios y vacaciones.",
+
+      "myWork": "Mi trabajo",
+
+      "myWorkDescription": "Desarrollo de funcionalidades tanto en frontend como en backend, trabajando sobre diferentes áreas de la aplicación.",
+
+      "areas": {
+        "calendar": {
+          "title": "Calendario y tareas",
+          "description": "Desarrollo y mejora de funcionalidades relacionadas con la planificación y gestión de tareas.",
+          "features": [
+            "Clonado de tareas en diferentes franjas horarias.",
+            "Gestión de horarios con intervalos de 15 minutos.",
+            "Avisos al crear tareas en fechas pasadas.",
+            "Publicación individual de tareas.",
+            "Marcado y desmarcado de tareas finalizadas.",
+            "Resumen diario de tareas.",
+            "Navegación del calendario mediante teclado."
+          ]
+        },
+
+        "conflicts": {
+          "title": "Resolución de conflictos",
+          "description": "Sistema para detectar y resolver conflictos entre tareas y usuarios antes de completar una operación.",
+          "features": [
+            "Detección de usuarios ocupados.",
+            "Identificación de la tarea que provoca el conflicto.",
+            "Resolución individual de cada conflicto.",
+            "Posibilidad de retirar usuarios de tareas en conflicto.",
+            "Aplicación de la resolución al finalizar la operación.",
+            "Soporte para crear, mover, clonar, redimensionar y modificar tareas."
+          ]
+        },
+
+        "clients": {
+          "title": "Clientes y usuarios",
+          "description": "Desarrollo de funcionalidades para la gestión de clientes y usuarios, incluyendo formularios, validaciones, búsquedas y ordenación.",
+          "features": [
+            "Creación de perfiles de clientes.",
+            "Validaciones de email, teléfono, NIF e IBAN.",
+            "Buscador unificado de clientes y sistemas.",
+            "Ordenación dinámica de clientes y usuarios.",
+            "Componente reutilizable para ordenar tablas.",
+            "Mejoras y correcciones en la gestión de usuarios."
+          ]
+        },
+
+        "vacations": {
+          "title": "Vacaciones y ausencias",
+          "description": "Integración de la gestión de vacaciones y ausencias con la planificación de tareas.",
+          "features": [
+            "Solicitud de vacaciones.",
+            "Estados de solicitud y aprobación.",
+            "Detección de conflictos entre vacaciones y tareas.",
+            "Asignación de vacaciones con resolución de conflictos.",
+            "Diálogos específicos para resolver conflictos.",
+            "Visualización de vacaciones en el calendario.",
+            "Protección de tareas relacionadas con ausencias."
+          ]
+        },
+
+        "ux": {
+          "title": "Experiencia de usuario",
+          "description": "Mejoras orientadas a hacer la aplicación más clara, consistente y fácil de utilizar.",
+          "features": [
+            "Previsualización completa de tareas.",
+            "Mejoras del diálogo de lectura de tareas.",
+            "Gestión de equipos de técnicos.",
+            "Corrección de problemas de visualización y overflow.",
+            "Mensajes de error más descriptivos.",
+            "Mejoras visuales de tablas y calendario.",
+            "Internacionalización mediante next-intl.",
+            "Componentes reutilizables para reducir duplicación."
+          ]
+        }
+      },
+
+      "highlights": {
+        "conflictSystem": {
+          "title": "Sistema de conflictos",
+          "description": "Sistema interactivo para detectar y resolver conflictos de planificación antes de completar una operación."
+        },
+
+        "dailySummary": {
+          "title": "Resumen diario",
+          "description": "Vista centralizada para consultar las tareas de un técnico y su estado durante un día concreto."
+        },
+
+        "vacationManagement": {
+          "title": "Gestión de vacaciones",
+          "description": "Integración entre vacaciones, ausencias y planificación para evitar conflictos de asignación."
+        },
+
+        "clientManagement": {
+          "title": "Gestión de clientes",
+          "description": "Perfiles de clientes con validaciones, búsqueda unificada y gestión de información adicional."
+        }
+      }
+    },
+
     "pricePoster": "Price Poster",
     "pricePosterDescription": "Aplicación para gestionar y generar carteles de precios.",
+
     "api": "Spring Boot API",
-    "apiDescription": "API REST desarrollada con Java, Spring Boot, JPA, MySQL y autenticación JWT."
+    "apiDescription": "API REST desarrollada con Java, Spring Boot, JPA, MySQL y autenticación JWT.",
+
+    "climbing": "Climbing API",
+    "climbingDescription": "Proyecto de gestión de vías de escalada desarrollado con Java y JDBC, posteriormente ampliado con una API REST para consultar y consumir los datos."
   },
+
   "Contact": {
     "title": "¿Hablamos?",
     "description": "Si tienes un proyecto, una propuesta o simplemente quieres contactar conmigo, puedes escribirme.",
     "email": "Enviar email"
   },
+
   "Footer": {
     "rights": "Todos los derechos reservados.",
     "builtWith": "Construido con Next.js y Chakra UI"
+  },
+
+  "Game": {
+    "section": "MINI JUEGO",
+    "description": "Un pequeño juego creado con React y TypeScript.",
+    "score": "PUNTUACIÓN",
+    "speed": "VELOCIDAD",
+    "soundOn": "Activar sonido",
+    "soundOff": "Silenciar música",
+    "ready": "¿Preparado?",
+    "play": "Jugar",
+    "gameOver": "GAME OVER",
+    "points": "{score} puntos",
+    "playAgain": "Volver a jugar",
+    "controls": "ESPACIO para saltar · Click para saltar"
+  },
+
+  "ThemeSelector": {
+    "ariaLabel": "Cambiar paleta de colores",
+    "title": "Tema de color",
+    "themes": {
+      "obsidian": "Obsidiana",
+      "ocean": "Océano",
+      "violet": "Violeta",
+      "emerald": "Esmeralda",
+      "amber": "Ámbar",
+      "crimson": "Carmesí",
+      "rose": "Rosa",
+      "graphite": "Grafito",
+      "cyber": "Ciber",
+      "midnight": "Medianoche",
+      "teal": "Turquesa",
+      "copper": "Cobre",
+      "slate": "Pizarra",
+      "lime": "Lima",
+      "sky": "Cielo",
+      "mono": "Monocromo"
+    }
   }
 }

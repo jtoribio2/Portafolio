@@ -24,7 +24,7 @@ export default function Experience() {
       id="experience"
       py={{ base: 24, md: 32 }}
       borderTop="1px solid"
-      borderColor="whiteAlpha.100"
+      borderColor="var(--border)"
     >
       <Container maxW="1200px">
         <Flex
@@ -43,9 +43,10 @@ export default function Experience() {
           <Box minW={{ lg: "300px" }}>
             <Text
               fontSize="sm"
-              color="gray.600"
+              color="var(--muted)"
               mb={3}
               fontFamily="mono"
+              opacity="0.65"
             >
               03 / EXPERIENCE
             </Text>
@@ -56,13 +57,14 @@ export default function Experience() {
                 md: "5xl",
               }}
               letterSpacing="-0.04em"
+              color="var(--foreground)"
             >
               {t("title")}
             </Heading>
 
             <Text
               mt={5}
-              color="gray.500"
+              color="var(--muted)"
               maxW="300px"
               lineHeight="1.7"
             >
@@ -88,7 +90,7 @@ export default function Experience() {
               top="10px"
               bottom="10px"
               w="1px"
-              bg="whiteAlpha.100"
+              bg="var(--border)"
             />
 
             <VStack
@@ -129,11 +131,14 @@ export default function Experience() {
                   w="13px"
                   h="13px"
                   borderRadius="full"
-                  bg="white"
+                  bg="var(--accent)"
                   border="3px solid"
-                  borderColor="gray.900"
+                  borderColor="var(--background)"
                   zIndex="1"
+                  boxShadow="0 0 12px var(--accent)"
                 />
+
+                {/* Tarjeta */}
 
                 <Box
                   p={{
@@ -141,13 +146,14 @@ export default function Experience() {
                     md: 7,
                   }}
                   border="1px solid"
-                  borderColor="whiteAlpha.100"
+                  borderColor="var(--border)"
                   borderRadius="2xl"
-                  bg="whiteAlpha.30"
+                  bg="var(--card)"
                   _hover={{
-                    borderColor: "whiteAlpha.200",
+                    borderColor: "var(--accent)",
+                    transform: "translateY(-2px)",
                   }}
-                  transition="border-color 0.2s"
+                  transition="all 0.2s"
                 >
                   <Flex
                     direction={{
@@ -162,7 +168,7 @@ export default function Experience() {
                       <HStack gap={3}>
                         <BriefcaseBusiness
                           size={19}
-                          color="#a1a1aa"
+                          color="var(--accent)"
                         />
 
                         <Heading
@@ -170,6 +176,7 @@ export default function Experience() {
                             base: "lg",
                             md: "xl",
                           }}
+                          color="var(--foreground)"
                         >
                           {t("fullstack")}
                         </Heading>
@@ -177,7 +184,7 @@ export default function Experience() {
 
                       <Text
                         mt={2}
-                        color="gray.500"
+                        color="var(--muted)"
                         fontSize="sm"
                       >
                         BYTCAT
@@ -190,8 +197,8 @@ export default function Experience() {
                         sm: "center",
                       }}
                       variant="outline"
-                      borderColor="whiteAlpha.200"
-                      color="gray.400"
+                      borderColor="var(--border)"
+                      color="var(--accent)"
                       px={3}
                       py={1}
                       borderRadius="full"
@@ -202,11 +209,13 @@ export default function Experience() {
                   </Flex>
 
                   <Text
-                    color="gray.400"
+                    color="var(--muted)"
                     lineHeight="1.8"
                   >
                     {t("description")}
                   </Text>
+
+                  {/* Tecnologías */}
 
                   <Flex
                     mt={6}
@@ -226,12 +235,17 @@ export default function Experience() {
                       <Badge
                         key={technology}
                         variant="subtle"
-                        bg="whiteAlpha.50"
-                        color="gray.400"
+                        bg="var(--border)"
+                        color="var(--muted)"
                         fontSize="xs"
                         px={2.5}
                         py={1}
                         borderRadius="md"
+                        _hover={{
+                          color: "var(--accent)",
+                          borderColor: "var(--accent)",
+                        }}
+                        transition="all 0.2s"
                       >
                         {technology}
                       </Badge>

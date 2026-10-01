@@ -6,14 +6,12 @@ import {
   Container,
   Flex,
   HStack,
-  IconButton,
   Link,
 } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
-import { useState, useSyncExternalStore } from "react";
-import { Moon, Sun } from "lucide-react";
-import { useColorMode } from "@/components/ui/color-mode";
+import { useState } from "react";
+import ThemeSelector from "@/components/ThemeSelector";
 
 const locales = [
   { code: "es", label: "ES" },
@@ -21,22 +19,12 @@ const locales = [
   { code: "en", label: "EN" },
 ];
 
-const emptySubscribe = () => () => {};
-
 export default function Navbar() {
   const t = useTranslations("Navbar");
   const pathname = usePathname();
   const router = useRouter();
 
-  const { colorMode, toggleColorMode } = useColorMode();
-
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const mounted = useSyncExternalStore(
-    emptySubscribe,
-    () => true,
-    () => false
-  );
 
   const currentLocale = pathname.split("/")[1] || "es";
 
@@ -57,8 +45,6 @@ export default function Navbar() {
     { href: "#contact", label: t("contact") },
   ];
 
-  const isDark = mounted && colorMode === "dark";
-
   return (
     <Box
       as="nav"
@@ -68,14 +54,8 @@ export default function Navbar() {
       right="0"
       zIndex="100"
       borderBottom="1px solid"
-      borderColor={
-        isDark ? "whiteAlpha.100" : "blackAlpha.200"
-      }
-      bg={
-        isDark
-          ? "rgba(9, 9, 11, 0.75)"
-          : "rgba(250, 250, 250, 0.8)"
-      }
+      borderColor="var(--border)"
+      bg="color-mix(in srgb, var(--background) 82%, transparent)"
       backdropFilter="blur(16px)"
     >
       <Container maxW="1200px">
@@ -91,6 +71,7 @@ export default function Navbar() {
             fontSize="lg"
             fontWeight="700"
             letterSpacing="-0.03em"
+            color="var(--foreground)"
             _hover={{
               textDecoration: "none",
               opacity: 0.7,
@@ -99,7 +80,7 @@ export default function Navbar() {
             JT
             <span
               style={{
-                color: isDark ? "#71717a" : "#a1a1aa",
+                color: "var(--accent)",
               }}
             >
               .
@@ -120,11 +101,9 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 fontSize="sm"
-                color={
-                  isDark ? "gray.400" : "gray.600"
-                }
+                color="var(--muted)"
                 _hover={{
-                  color: isDark ? "white" : "black",
+                  color: "var(--foreground)",
                   textDecoration: "none",
                 }}
                 transition="color 0.2s"
@@ -136,79 +115,47 @@ export default function Navbar() {
             {/* Idiomas */}
 
             <HStack gap={1}>
-              {locales.map((locale) => (
-                <Button
-                  key={locale.code}
-                  variant="ghost"
-                  size="xs"
-                  px={2}
-                  py={1}
-                  borderRadius="md"
-                  fontSize="xs"
-                  fontWeight="600"
-                  color={
-                    currentLocale === locale.code
-                      ? isDark
-                        ? "white"
-                        : "black"
-                      : isDark
-                        ? "gray.600"
-                        : "gray.400"
-                  }
-                  bg={
-                    currentLocale === locale.code
-                      ? "blackAlpha.100"
-                      : "transparent"
-                  }
-                  onClick={() =>
-                    changeLocale(locale.code)
-                  }
-                  _hover={{
-                    color: isDark
-                      ? "white"
-                      : "black",
-                    bg: isDark
-                      ? "whiteAlpha.100"
-                      : "blackAlpha.100",
-                  }}
-                >
-                  {locale.label}
-                </Button>
-              ))}
+              {locales.map((locale) => {
+                const active =
+                  currentLocale === locale.code;
+
+                return (
+                  <Button
+                    key={locale.code}
+                    variant="ghost"
+                    size="xs"
+                    px={2}
+                    py={1}
+                    borderRadius="md"
+                    fontSize="xs"
+                    fontWeight="600"
+                    color={
+                      active
+                        ? "var(--foreground)"
+                        : "var(--muted)"
+                    }
+                    bg={
+                      active
+                        ? "var(--border)"
+                        : "transparent"
+                    }
+                    onClick={() =>
+                      changeLocale(locale.code)
+                    }
+                    _hover={{
+                      color: "var(--foreground)",
+                      bg: "var(--border)",
+                    }}
+                  >
+                    {locale.label}
+                  </Button>
+                );
+              })}
             </HStack>
 
-            {/* Tema */}
+            {/* Selector de temas */}
 
-            <IconButton
-              aria-label="Cambiar tema"
-              variant="ghost"
-              size="sm"
-              color={
-                isDark ? "gray.400" : "gray.600"
-              }
-              onClick={toggleColorMode}
-              _hover={{
-                color: isDark
-                  ? "white"
-                  : "black",
-                bg: isDark
-                  ? "whiteAlpha.100"
-                  : "blackAlpha.100",
-              }}
-            >
-              {mounted ? (
-                isDark ? (
-                  <Sun size={17} />
-                ) : (
-                  <Moon size={17} />
-                )
-              ) : (
-                <Box
-                  w="17px"
-                  h="17px"
-                />
-              )}
-            </IconButton>
+            <ThemeSelector />
           </HStack>
 
           {/* Mobile */}
@@ -219,9 +166,7 @@ export default function Navbar() {
               md: "none",
             }}
             variant="ghost"
-            color={
-              isDark ? "white" : "black"
-            }
+            color="var(--foreground)"
             fontSize="24px"
             minW="40px"
             h="40px"
@@ -230,9 +175,7 @@ export default function Navbar() {
               setMenuOpen(!menuOpen)
             }
             _hover={{
-              bg: isDark
-                ? "whiteAlpha.100"
-                : "blackAlpha.100",
+              bg: "var(--border)",
             }}
           >
             {menuOpen ? "×" : "☰"}
@@ -257,18 +200,12 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  color={
-                    isDark
-                      ? "gray.400"
-                      : "gray.600"
-                  }
+                  color="var(--muted)"
                   onClick={() =>
                     setMenuOpen(false)
                   }
                   _hover={{
-                    color: isDark
-                      ? "white"
-                      : "black",
+                    color: "var(--foreground)",
                     textDecoration: "none",
                   }}
                 >
@@ -282,71 +219,42 @@ export default function Navbar() {
               >
                 {/* Idiomas móvil */}
 
-                {locales.map((locale) => (
-                  <Button
-                    key={locale.code}
-                    variant="ghost"
-                    size="sm"
-                    px={2}
-                    color={
-                      currentLocale === locale.code
-                        ? isDark
-                          ? "white"
-                          : "black"
-                        : isDark
-                          ? "gray.600"
-                          : "gray.400"
-                    }
-                    onClick={() =>
-                      changeLocale(locale.code)
-                    }
-                    _hover={{
-                      color: isDark
-                        ? "white"
-                        : "black",
-                      bg: isDark
-                        ? "whiteAlpha.100"
-                        : "blackAlpha.100",
-                    }}
-                  >
-                    {locale.label}
-                  </Button>
-                ))}
+                {locales.map((locale) => {
+                  const active =
+                    currentLocale === locale.code;
 
-                {/* Tema móvil */}
+                  return (
+                    <Button
+                      key={locale.code}
+                      variant="ghost"
+                      size="sm"
+                      px={2}
+                      color={
+                        active
+                          ? "var(--foreground)"
+                          : "var(--muted)"
+                      }
+                      bg={
+                        active
+                          ? "var(--border)"
+                          : "transparent"
+                      }
+                      onClick={() =>
+                        changeLocale(locale.code)
+                      }
+                      _hover={{
+                        color: "var(--foreground)",
+                        bg: "var(--border)",
+                      }}
+                    >
+                      {locale.label}
+                    </Button>
+                  );
+                })}
 
-                <IconButton
-                  aria-label="Cambiar tema"
-                  variant="ghost"
-                  size="sm"
-                  color={
-                    isDark
-                      ? "gray.400"
-                      : "gray.600"
-                  }
-                  onClick={toggleColorMode}
-                  _hover={{
-                    color: isDark
-                      ? "white"
-                      : "black",
-                    bg: isDark
-                      ? "whiteAlpha.100"
-                      : "blackAlpha.100",
-                  }}
-                >
-                  {mounted ? (
-                    isDark ? (
-                      <Sun size={17} />
-                    ) : (
-                      <Moon size={17} />
-                    )
-                  ) : (
-                    <Box
-                      w="17px"
-                      h="17px"
-                    />
-                  )}
-                </IconButton>
+                {/* Selector de temas móvil */}
+
+                <ThemeSelector />
               </HStack>
             </Flex>
           </Box>

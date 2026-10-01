@@ -1,62 +1,104 @@
 {
   "Navbar": {
-    "about": "About me",
-    "skills": "Skills",
-    "experience": "Experience",
-    "projects": "Projects",
-    "contact": "Contact"
+    "about": "Sobre mi",
+    "skills": "Tecnologies",
+    "experience": "Experiència",
+    "projects": "Projectes",
+    "contact": "Contacte"
   },
   "Hero": {
-    "greeting": "Hi, I'm",
+    "greeting": "Hola, soc",
     "name": "Joel Toribio",
     "role": "Full Stack Developer",
-    "description": "I build modern, scalable web applications focused on delivering a great user experience.",
-    "viewProjects": "View projects",
-    "contactMe": "Contact me",
-    "available": "Available for new projects",
-    "scroll": "Discover my work"
+    "description": "Desenvolupo aplicacions web modernes, escalables i centrades a oferir una bona experiència d'usuari.",
+    "viewProjects": "Veure projectes",
+    "contactMe": "Contactar amb mi",
+    "available": "Disponible per a nous projectes",
+    "scroll": "Descobreix el meu treball"
   },
   "About": {
-    "title": "About me",
-    "description": "I'm a Full Stack Developer and Web Application Development student. I enjoy building useful, well-structured and maintainable applications.",
-    "description2": "I mainly work with Java, Spring Boot, TypeScript, React, Next.js, NestJS and SQL databases.",
-    "cleanCode": "Organized and maintainable code.",
-    "fullStack": "Frontend, backend and APIs.",
-    "data": "SQL, MySQL and data management."
+    "title": "Sobre mi",
+    "description": "Soc desenvolupador Full Stack i estudiant de Desenvolupament d'Aplicacions Web. M'interessa crear aplicacions útils, ben estructurades i fàcils de mantenir.",
+    "description2": "Treballo principalment amb Java, Spring Boot, TypeScript, React, Next.js, NestJS i bases de dades SQL.",
+    "cleanCode": "Codi organitzat i fàcil de mantenir.",
+    "fullStack": "Frontend, backend i APIs.",
+    "data": "SQL, MySQL i gestió de dades."
   },
   "Skills": {
-    "title": "Technologies",
-    "subtitle": "Technologies I work with regularly",
+    "title": "Tecnologies",
+    "subtitle": "Tecnologies i eines que he utilitzat durant la meva formació i projectes",
     "frontend": "Frontend",
     "backend": "Backend",
-    "database": "Databases and tools"
+    "databases": "Bases de dades",
+    "tools": "Eines i disseny"
   },
   "Experience": {
-    "title": "Experience",
-    "subtitle": "My journey in software development",
+    "title": "Experiència",
+    "subtitle": "La meva trajectòria en el desenvolupament de programari",
     "fullstack": "Full Stack Developer",
-    "current": "Present",
-    "description": "Development and maintenance of web applications using frontend and backend technologies."
+    "current": "Actualitat",
+    "description": "Desenvolupament i manteniment d'aplicacions web utilitzant tecnologies frontend i backend."
   },
   "Projects": {
-    "title": "Projects",
-    "subtitle": "Some of the projects I've worked on",
-    "viewProject": "View project",
-    "viewCode": "View code",
+    "title": "Projectes",
+    "subtitle": "Alguns dels projectes en què he treballat",
+    "viewProject": "Veure projecte",
+    "viewCode": "Veure codi",
+    "privateProject": "Internal project",
+    "close": "Close",
     "planner": "Planner",
-    "plannerDescription": "Web application for task and technician management and planning.",
+    "plannerDescription": "Aplicació web per a la gestió i planificació de tasques i tècnics.",
     "pricePoster": "Price Poster",
-    "pricePosterDescription": "Application for managing and generating price posters.",
+    "pricePosterDescription": "Aplicació per gestionar i generar cartells de preus.",
     "api": "Spring Boot API",
-    "apiDescription": "REST API built with Java, Spring Boot, JPA, MySQL and JWT authentication."
+    "apiDescription": "API REST desenvolupada amb Java, Spring Boot, JPA, MySQL i autenticació JWT.",
+    "climbing": "Climbing API",
+    "climbingDescription": "Projecte de gestió de vies d'escalada desenvolupat amb Java i JDBC, posteriorment ampliat amb una API REST per consultar i consumir les dades."
   },
   "Contact": {
-    "title": "Let's talk",
-    "description": "If you have a project, an opportunity or simply want to get in touch, feel free to contact me.",
-    "email": "Send email"
+    "title": "En parlem?",
+    "description": "Si tens un projecte, una proposta o simplement vols contactar amb mi, pots escriure'm.",
+    "email": "Enviar email"
   },
   "Footer": {
-    "rights": "All rights reserved.",
-    "builtWith": "Built with Next.js and Chakra UI"
+    "rights": "Tots els drets reservats.",
+    "builtWith": "Construït amb Next.js i Chakra UI"
+  },
+  "Game": {
+    "section": "MINI JOC",
+    "description": "Un petit joc creat amb React i TypeScript.",
+    "score": "PUNTUACIÓ",
+    "speed": "VELOCITAT",
+    "soundOn": "Activar so",
+    "soundOff": "Silenciar música",
+    "ready": "Preparat?",
+    "play": "Jugar",
+    "gameOver": "GAME OVER",
+    "points": "{score} punts",
+    "playAgain": "Tornar a jugar",
+    "controls": "ESPAI per saltar · Clic per saltar"
+  },
+  "ThemeSelector": {
+    "ariaLabel": "Canviar la paleta de colors",
+    "title": "Tema de color",
+    "themes": {
+      "obsidian": "Obsidiana",
+      "ocean": "Oceà",
+      "violet": "Violeta",
+      "emerald": "Esmeralda",
+      "amber": "Àmbar",
+      "minimal": "Minimalista",
+      "graphite": "Grafit",
+      "crimson": "Carmesí",
+      "rose": "Rosa",
+      "cyber": "Ciber",
+      "midnight": "Mitjanit",
+      "teal": "Turquesa",
+      "copper": "Coure",
+      "slate": "Pissarra",
+      "lime": "Llima",
+      "sky": "Cel",
+      "mono": "Monocrom"
+    }
   }
 }

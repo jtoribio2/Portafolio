@@ -26,53 +26,81 @@ export default function Contact() {
       id="contact"
       py={{ base: 24, md: 32 }}
       borderTop="1px solid"
-      borderColor="whiteAlpha.100"
+      borderColor="var(--border)"
     >
       <Container maxW="1200px">
         <MotionBox
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
           viewport={{
             once: true,
             amount: 0.2,
           }}
         >
           <Flex
-            direction={{ base: "column", lg: "row" }}
+            direction={{
+              base: "column",
+              lg: "row",
+            }}
             justify="space-between"
-            align={{ base: "flex-start", lg: "center" }}
+            align={{
+              base: "flex-start",
+              lg: "center",
+            }}
             gap={10}
-            p={{ base: 7, md: 10 }}
+            p={{
+              base: 7,
+              md: 10,
+            }}
             border="1px solid"
-            borderColor="whiteAlpha.100"
+            borderColor="var(--border)"
             borderRadius="2xl"
-            bg="whiteAlpha.30"
+            bg="color-mix(in srgb, var(--background) 85%, transparent)"
           >
-            <VStack align="start" gap={5} maxW="650px">
+            <VStack
+              align="start"
+              gap={5}
+              maxW="650px"
+            >
               <Text
                 fontSize="sm"
-                color="gray.600"
+                color="var(--muted)"
                 fontFamily="mono"
               >
                 05 / CONTACT
               </Text>
 
               <Heading
-                fontSize={{ base: "4xl", md: "6xl" }}
+                fontSize={{
+                  base: "4xl",
+                  md: "6xl",
+                }}
                 letterSpacing="-0.05em"
               >
                 {t("title")}
               </Heading>
 
               <Text
-                color="gray.400"
-                fontSize={{ base: "md", md: "lg" }}
+                color="var(--muted)"
+                fontSize={{
+                  base: "md",
+                  md: "lg",
+                }}
                 lineHeight="1.8"
               >
                 {t("description")}
               </Text>
 
-              <HStack gap={3} flexWrap="wrap">
+              <HStack
+                gap={3}
+                flexWrap="wrap"
+              >
                 <Link
                   href="mailto:jtoribioprog@gmail.com"
                   _hover={{
@@ -81,18 +109,20 @@ export default function Contact() {
                 >
                   <Button
                     size="lg"
-                    bg="white"
-                    color="black"
+                    bg="var(--accent)"
+                    color="var(--background)"
                     borderRadius="full"
                     px={6}
                     _hover={{
-                      bg: "gray.200",
+                      opacity: 0.85,
                       transform: "translateY(-2px)",
                     }}
                     transition="all 0.2s"
                   >
                     <Mail size={18} />
+
                     {t("email")}
+
                     <ArrowUpRight size={17} />
                   </Button>
                 </Link>
@@ -106,20 +136,22 @@ export default function Contact() {
                   <Button
                     size="lg"
                     variant="outline"
-                    borderColor="whiteAlpha.200"
-                    color="white"
+                    borderColor="var(--border)"
+                    color="var(--foreground)"
                     borderRadius="full"
                     px={6}
                     _hover={{
-                      bg: "whiteAlpha.100",
+                      bg: "color-mix(in srgb, var(--accent) 15%, transparent)",
                     }}
                   >
                     <Phone size={18} />
+
                     665 667 846
                   </Button>
                 </Link>
               </HStack>
             </VStack>
+
 
             <HStack gap={3}>
               <Link
@@ -136,18 +168,19 @@ export default function Contact() {
                   align="center"
                   justify="center"
                   border="1px solid"
-                  borderColor="whiteAlpha.100"
+                  borderColor="var(--border)"
                   borderRadius="full"
-                  color="gray.400"
+                  color="var(--muted)"
                   _hover={{
-                    color: "white",
-                    bg: "whiteAlpha.100",
+                    color: "var(--foreground)",
+                    bg: "color-mix(in srgb, var(--accent) 15%, transparent)",
                   }}
                   transition="all 0.2s"
                 >
                   <FaGithub size={20} />
                 </Flex>
               </Link>
+
 
               <Link
                 href="https://www.linkedin.com/in/joel-toribio-palomino-797017428/"
@@ -163,12 +196,12 @@ export default function Contact() {
                   align="center"
                   justify="center"
                   border="1px solid"
-                  borderColor="whiteAlpha.100"
+                  borderColor="var(--border)"
                   borderRadius="full"
-                  color="gray.400"
+                  color="var(--muted)"
                   _hover={{
-                    color: "white",
-                    bg: "whiteAlpha.100",
+                    color: "var(--foreground)",
+                    bg: "color-mix(in srgb, var(--accent) 15%, transparent)",
                   }}
                   transition="all 0.2s"
                 >
@@ -176,6 +209,7 @@ export default function Contact() {
                 </Flex>
               </Link>
             </HStack>
+
           </Flex>
         </MotionBox>
       </Container>

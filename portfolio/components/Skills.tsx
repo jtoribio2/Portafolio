@@ -12,16 +12,23 @@ import {
 import { motion } from "motion/react";
 import {
   SiDocker,
+  SiFigma,
   SiGit,
   SiJavascript,
+  SiMongodb,
   SiMysql,
   SiNestjs,
   SiNextdotjs,
+  SiNodedotjs,
+  SiPhp,
+  SiPostgresql,
   SiReact,
   SiSpringboot,
+  SiSwagger,
   SiTypescript,
 } from "react-icons/si";
-import { FaJava } from "react-icons/fa";
+import { FaJava, FaWindows } from "react-icons/fa";
+import { Database } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 const MotionBox = motion.create(Box);
@@ -37,12 +44,23 @@ const backend = [
   { name: "Java", icon: FaJava },
   { name: "Spring Boot", icon: SiSpringboot },
   { name: "NestJS", icon: SiNestjs },
+  { name: "Node.js", icon: SiNodedotjs },
+  { name: "PHP", icon: SiPhp },
+];
+
+const databases = [
+  { name: "MySQL", icon: SiMysql },
+  { name: "PostgreSQL", icon: SiPostgresql },
+  { name: "MongoDB", icon: SiMongodb },
+  { name: "SQL Server", icon: Database },
 ];
 
 const tools = [
-  { name: "MySQL", icon: SiMysql },
   { name: "Git", icon: SiGit },
   { name: "Docker", icon: SiDocker },
+  { name: "Swagger", icon: SiSwagger },
+  { name: "Windows", icon: FaWindows },
+  { name: "Figma", icon: SiFigma },
 ];
 
 function TechnologyCard({
@@ -66,18 +84,17 @@ function TechnologyCard({
         gap={4}
         p={4}
         border="1px solid"
-        borderColor="whiteAlpha.100"
+        borderColor="var(--border)"
         borderRadius="xl"
-        bg="whiteAlpha.30"
+        bg="color-mix(in srgb, var(--background) 85%, white 5%)"
         _hover={{
-          borderColor: "whiteAlpha.300",
-          bg: "whiteAlpha.50",
+          borderColor: "var(--accent)",
         }}
         transition="all 0.2s"
       >
         <Box
           fontSize="24px"
-          color="gray.300"
+          color="var(--accent)"
         >
           <Icon />
         </Box>
@@ -85,7 +102,7 @@ function TechnologyCard({
         <Text
           fontSize="sm"
           fontWeight="500"
-          color="gray.300"
+          color="var(--foreground)"
         >
           {name}
         </Text>
@@ -99,7 +116,10 @@ function TechnologyGroup({
   technologies,
 }: {
   title: string;
-  technologies: typeof frontend;
+  technologies: {
+    name: string;
+    icon: React.ElementType;
+  }[];
 }) {
   return (
     <VStack
@@ -109,7 +129,7 @@ function TechnologyGroup({
     >
       <Text
         fontSize="sm"
-        color="gray.500"
+        color="var(--muted)"
         fontFamily="mono"
       >
         {title}
@@ -140,9 +160,12 @@ export default function Skills() {
   return (
     <Box
       id="skills"
-      py={{ base: 24, md: 32 }}
+      py={{
+        base: 24,
+        md: 32,
+      }}
       borderTop="1px solid"
-      borderColor="whiteAlpha.100"
+      borderColor="var(--border)"
     >
       <Container maxW="1200px">
         <Flex
@@ -159,7 +182,7 @@ export default function Skills() {
           <Box minW={{ lg: "300px" }}>
             <Text
               fontSize="sm"
-              color="gray.600"
+              color="var(--muted)"
               mb={3}
               fontFamily="mono"
             >
@@ -172,13 +195,14 @@ export default function Skills() {
                 md: "5xl",
               }}
               letterSpacing="-0.04em"
+              color="var(--foreground)"
             >
               {t("title")}
             </Heading>
 
             <Text
               mt={5}
-              color="gray.500"
+              color="var(--muted)"
               maxW="300px"
               lineHeight="1.7"
             >
@@ -186,12 +210,14 @@ export default function Skills() {
             </Text>
           </Box>
 
+
           <VStack
             align="start"
             gap={8}
             w="full"
             maxW="700px"
           >
+
             <MotionBox
               w="full"
               initial={{
@@ -212,6 +238,7 @@ export default function Skills() {
                 technologies={frontend}
               />
             </MotionBox>
+
 
             <MotionBox
               w="full"
@@ -237,6 +264,7 @@ export default function Skills() {
               />
             </MotionBox>
 
+
             <MotionBox
               w="full"
               initial={{
@@ -256,11 +284,38 @@ export default function Skills() {
               }}
             >
               <TechnologyGroup
-                title={t("database")}
+                title={t("databases")}
+                technologies={databases}
+              />
+            </MotionBox>
+
+
+            <MotionBox
+              w="full"
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.2,
+              }}
+              transition={{
+                delay: 0.3,
+              }}
+            >
+              <TechnologyGroup
+                title={t("tools")}
                 technologies={tools}
               />
             </MotionBox>
+
           </VStack>
+
         </Flex>
       </Container>
     </Box>

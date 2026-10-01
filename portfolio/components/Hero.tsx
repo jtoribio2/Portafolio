@@ -8,6 +8,7 @@ import {
   Flex,
   Heading,
   HStack,
+  Image,
   Link,
   Text,
   VStack,
@@ -18,6 +19,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useTranslations } from "next-intl";
 import { useColorMode } from "@/components/ui/color-mode";
 import { useSyncExternalStore } from "react";
+import Documents from "@/components/Documents";
 
 const MotionBox = motion.create(Box);
 
@@ -30,7 +32,7 @@ export default function Hero() {
   const mounted = useSyncExternalStore(
     emptySubscribe,
     () => true,
-    () => false
+    () => false,
   );
 
   const isDark = mounted && colorMode === "dark";
@@ -53,7 +55,11 @@ export default function Hero() {
         w="600px"
         h="600px"
         borderRadius="full"
-        bg={isDark ? "whiteAlpha.50" : "blackAlpha.50"}
+        bg={
+          isDark
+            ? "whiteAlpha.50"
+            : "blackAlpha.50"
+        }
         filter="blur(100px)"
       />
 
@@ -64,7 +70,11 @@ export default function Hero() {
         w="500px"
         h="500px"
         borderRadius="full"
-        bg={isDark ? "whiteAlpha.30" : "blackAlpha.30"}
+        bg={
+          isDark
+            ? "whiteAlpha.30"
+            : "blackAlpha.30"
+        }
         filter="blur(120px)"
       />
 
@@ -72,10 +82,16 @@ export default function Hero() {
         maxW="1200px"
         position="relative"
         zIndex="1"
-        pt={{ base: 24, md: 20 }}
+        pt={{
+          base: 24,
+          md: 20,
+        }}
       >
         <Flex
-          direction={{ base: "column", lg: "row" }}
+          direction={{
+            base: "column",
+            lg: "row",
+          }}
           align="center"
           justify="space-between"
           gap={16}
@@ -90,9 +106,17 @@ export default function Hero() {
             {/* Disponible */}
 
             <MotionBox
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.6,
+              }}
             >
               <Badge
                 px={3}
@@ -155,24 +179,74 @@ export default function Hero() {
                 {t("greeting")}
               </Text>
 
-              <Heading
-                mt={2}
-                fontSize={{
-                  base: "5xl",
-                  sm: "6xl",
-                  md: "7xl",
-                  lg: "8xl",
+              <Flex
+                align="center"
+                gap={{
+                  base: 4,
+                  md: 6,
                 }}
-                lineHeight="0.9"
-                letterSpacing="-0.06em"
-                color={
-                  isDark
-                    ? "white"
-                    : "gray.900"
-                }
+                mt={2}
               >
-                {t("name")}
-              </Heading>
+                <Heading
+                  fontSize={{
+                    base: "5xl",
+                    sm: "6xl",
+                    md: "7xl",
+                    lg: "8xl",
+                  }}
+                  lineHeight="0.9"
+                  letterSpacing="-0.06em"
+                  color={
+                    isDark
+                      ? "white"
+                      : "gray.900"
+                  }
+                >
+                  {t("name")}
+                </Heading>
+
+                {/* Foto de perfil */}
+
+                <Box
+                  flexShrink={0}
+                  w={{
+                    base: "100px",
+                    md: "155px",
+                  }}
+                  h={{
+                    base: "100px",
+                    md: "155px",
+                  }}
+                  borderRadius="full"
+                  overflow="hidden"
+                  border="2px solid"
+                  borderColor={
+                    isDark
+                      ? "whiteAlpha.200"
+                      : "blackAlpha.200"
+                  }
+                  boxShadow={
+                    isDark
+                      ? "0 15px 40px rgba(0,0,0,0.35)"
+                      : "0 15px 40px rgba(0,0,0,0.15)"
+                  }
+                  bg={
+                    isDark
+                      ? "whiteAlpha.50"
+                      : "blackAlpha.50"
+                  }
+                  position="relative"
+                >
+                  <Image
+                    src="/images/joel.png"
+                    alt="Joel Toribio"
+                    w="100%"
+                    h="100%"
+                    objectFit="cover"
+                    objectPosition="center top"
+                  />
+                </Box>
+              </Flex>
             </MotionBox>
 
             {/* Profesión */}
@@ -292,7 +366,9 @@ export default function Hero() {
                   >
                     {t("viewProjects")}
 
-                    <ArrowUpRight size={18} />
+                    <ArrowUpRight
+                      size={18}
+                    />
                   </Button>
                 </Link>
 
@@ -326,6 +402,10 @@ export default function Hero() {
                     {t("contactMe")}
                   </Button>
                 </Link>
+
+                {/* CV Y CERTIFICADOS */}
+
+                <Documents />
               </HStack>
             </MotionBox>
 
@@ -370,7 +450,9 @@ export default function Hero() {
                 }}
                 transition="color 0.2s"
               >
-                <FaLinkedin size={21} />
+                <FaLinkedin
+                  size={21}
+                />
               </Link>
             </HStack>
           </VStack>
