@@ -17,25 +17,12 @@ import { motion } from "motion/react";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useTranslations } from "next-intl";
-import { useColorMode } from "@/components/ui/color-mode";
-import { useSyncExternalStore } from "react";
 import Documents from "@/components/Documents";
 
 const MotionBox = motion.create(Box);
 
-const emptySubscribe = () => () => {};
-
 export default function Hero() {
   const t = useTranslations("Hero");
-  const { colorMode } = useColorMode();
-
-  const mounted = useSyncExternalStore(
-    emptySubscribe,
-    () => true,
-    () => false,
-  );
-
-  const isDark = mounted && colorMode === "dark";
 
   return (
     <Box
@@ -45,6 +32,8 @@ export default function Hero() {
       alignItems="center"
       position="relative"
       overflow="hidden"
+      bg="var(--background)"
+      color="var(--foreground)"
     >
       {/* Luces de fondo */}
 
@@ -55,11 +44,8 @@ export default function Hero() {
         w="600px"
         h="600px"
         borderRadius="full"
-        bg={
-          isDark
-            ? "whiteAlpha.50"
-            : "blackAlpha.50"
-        }
+        bg="var(--accent)"
+        opacity={0.06}
         filter="blur(100px)"
       />
 
@@ -70,11 +56,8 @@ export default function Hero() {
         w="500px"
         h="500px"
         borderRadius="full"
-        bg={
-          isDark
-            ? "whiteAlpha.30"
-            : "blackAlpha.30"
-        }
+        bg="var(--accent)"
+        opacity={0.04}
         filter="blur(120px)"
       />
 
@@ -123,16 +106,8 @@ export default function Hero() {
                 py={1.5}
                 borderRadius="full"
                 variant="outline"
-                color={
-                  isDark
-                    ? "gray.300"
-                    : "gray.700"
-                }
-                borderColor={
-                  isDark
-                    ? "whiteAlpha.200"
-                    : "blackAlpha.300"
-                }
+                color="var(--muted)"
+                borderColor="var(--border)"
                 fontSize="xs"
               >
                 <Box
@@ -166,11 +141,7 @@ export default function Hero() {
               }}
             >
               <Text
-                color={
-                  isDark
-                    ? "gray.400"
-                    : "gray.700"
-                }
+                color="var(--muted)"
                 fontSize={{
                   base: "lg",
                   md: "xl",
@@ -196,11 +167,7 @@ export default function Hero() {
                   }}
                   lineHeight="0.9"
                   letterSpacing="-0.06em"
-                  color={
-                    isDark
-                      ? "white"
-                      : "gray.900"
-                  }
+                  color="var(--foreground)"
                 >
                   {t("name")}
                 </Heading>
@@ -220,21 +187,9 @@ export default function Hero() {
                   borderRadius="full"
                   overflow="hidden"
                   border="2px solid"
-                  borderColor={
-                    isDark
-                      ? "whiteAlpha.200"
-                      : "blackAlpha.200"
-                  }
-                  boxShadow={
-                    isDark
-                      ? "0 15px 40px rgba(0,0,0,0.35)"
-                      : "0 15px 40px rgba(0,0,0,0.15)"
-                  }
-                  bg={
-                    isDark
-                      ? "whiteAlpha.50"
-                      : "blackAlpha.50"
-                  }
+                  borderColor="var(--border)"
+                  boxShadow="0 15px 40px rgba(0,0,0,0.25)"
+                  bg="var(--background)"
                   position="relative"
                 >
                   <Image
@@ -270,11 +225,7 @@ export default function Hero() {
                   base: "2xl",
                   md: "4xl",
                 }}
-                color={
-                  isDark
-                    ? "gray.500"
-                    : "gray.700"
-                }
+                color="var(--muted)"
                 fontWeight="500"
                 letterSpacing="-0.03em"
               >
@@ -300,11 +251,7 @@ export default function Hero() {
             >
               <Text
                 maxW="620px"
-                color={
-                  isDark
-                    ? "gray.400"
-                    : "gray.700"
-                }
+                color="var(--muted)"
                 fontSize={{
                   base: "md",
                   md: "lg",
@@ -343,24 +290,13 @@ export default function Hero() {
                 >
                   <Button
                     size="lg"
-                    bg={
-                      isDark
-                        ? "white"
-                        : "gray.900"
-                    }
-                    color={
-                      isDark
-                        ? "black"
-                        : "white"
-                    }
+                    bg="var(--accent)"
+                    color="var(--background)"
                     borderRadius="full"
                     px={6}
                     _hover={{
-                      bg: isDark
-                        ? "gray.200"
-                        : "gray.700",
-                      transform:
-                        "translateY(-2px)",
+                      opacity: 0.85,
+                      transform: "translateY(-2px)",
                     }}
                     transition="all 0.2s"
                   >
@@ -381,20 +317,10 @@ export default function Hero() {
                   <Button
                     size="lg"
                     variant="outline"
-                    borderColor={
-                      isDark
-                        ? "whiteAlpha.200"
-                        : "blackAlpha.300"
-                    }
-                    color={
-                      isDark
-                        ? "white"
-                        : "gray.900"
-                    }
+                    borderColor="var(--border)"
+                    color="var(--foreground)"
                     _hover={{
-                      bg: isDark
-                        ? "whiteAlpha.100"
-                        : "blackAlpha.100",
+                      bg: "var(--border)",
                     }}
                     borderRadius="full"
                     px={6}
@@ -419,15 +345,9 @@ export default function Hero() {
                 href="https://github.com/jtoribio2"
                 target="_blank"
                 rel="noopener noreferrer"
-                color={
-                  isDark
-                    ? "gray.500"
-                    : "gray.700"
-                }
+                color="var(--muted)"
                 _hover={{
-                  color: isDark
-                    ? "white"
-                    : "black",
+                  color: "var(--foreground)",
                 }}
                 transition="color 0.2s"
               >
@@ -438,21 +358,13 @@ export default function Hero() {
                 href="https://www.linkedin.com/in/joel-toribio-palomino-797017428/"
                 target="_blank"
                 rel="noopener noreferrer"
-                color={
-                  isDark
-                    ? "gray.500"
-                    : "gray.700"
-                }
+                color="var(--muted)"
                 _hover={{
-                  color: isDark
-                    ? "white"
-                    : "black",
+                  color: "var(--foreground)",
                 }}
                 transition="color 0.2s"
               >
-                <FaLinkedin
-                  size={21}
-                />
+                <FaLinkedin size={21} />
               </Link>
             </HStack>
           </VStack>
@@ -481,24 +393,12 @@ export default function Hero() {
               w="380px"
               h="300px"
               border="1px solid"
-              borderColor={
-                isDark
-                  ? "whiteAlpha.100"
-                  : "blackAlpha.300"
-              }
+              borderColor="var(--border)"
               borderRadius="2xl"
-              bg={
-                isDark
-                  ? "whiteAlpha.30"
-                  : "blackAlpha.50"
-              }
+              bg="var(--background)"
               backdropFilter="blur(20px)"
               p={5}
-              boxShadow={
-                isDark
-                  ? "0 25px 80px rgba(0,0,0,0.4)"
-                  : "0 25px 80px rgba(0,0,0,0.12)"
-              }
+              boxShadow="0 25px 80px rgba(0,0,0,0.25)"
             >
               {/* Barra terminal */}
 
@@ -531,11 +431,7 @@ export default function Hero() {
               <Text
                 fontFamily="mono"
                 fontSize="sm"
-                color={
-                  isDark
-                    ? "gray.500"
-                    : "gray.700"
-                }
+                color="var(--muted)"
                 mb={2}
               >
                 joel@portfolio:~$
@@ -544,16 +440,12 @@ export default function Hero() {
               <Text
                 fontFamily="mono"
                 fontSize="sm"
-                color={
-                  isDark
-                    ? "gray.300"
-                    : "gray.800"
-                }
+                color="var(--foreground)"
                 lineHeight="2"
               >
                 <Text
                   as="span"
-                  color="green.500"
+                  color="var(--accent)"
                 >
                   $
                 </Text>{" "}
@@ -562,11 +454,7 @@ export default function Hero() {
 
                 <Text
                   as="span"
-                  color={
-                    isDark
-                      ? "gray.500"
-                      : "gray.700"
-                  }
+                  color="var(--muted)"
                 >
                   Full Stack Developer
                 </Text>
@@ -576,7 +464,7 @@ export default function Hero() {
 
                 <Text
                   as="span"
-                  color="green.500"
+                  color="var(--accent)"
                 >
                   $
                 </Text>{" "}
@@ -585,11 +473,7 @@ export default function Hero() {
 
                 <Text
                   as="span"
-                  color={
-                    isDark
-                      ? "gray.500"
-                      : "gray.700"
-                  }
+                  color="var(--muted)"
                 >
                   Java · React · Next.js
                   <br />
@@ -601,7 +485,7 @@ export default function Hero() {
 
                 <Text
                   as="span"
-                  color="green.500"
+                  color="var(--accent)"
                 >
                   $
                 </Text>{" "}
@@ -610,7 +494,7 @@ export default function Hero() {
 
                 <Text
                   as="span"
-                  color="green.500"
+                  color="var(--accent)"
                 >
                   ● ready_to_build
                 </Text>
@@ -626,7 +510,7 @@ export default function Hero() {
           bottom="-80px"
           left="50%"
           transform="translateX(-50%)"
-          color="gray.600"
+          color="var(--muted)"
           gap={2}
           fontSize="xs"
           display={{
