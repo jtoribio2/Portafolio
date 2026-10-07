@@ -214,5 +214,28 @@
       "sky": "Cel",
       "mono": "Monocrom"
     }
+  },
+  "ThemeWelcome": {
+    "title": "Tria el teu color preferit",
+    "description": "Fes que aquest portfoli se senti com a casa. Tria el tema que més t'agradi.",
+    "footer": "La teva elecció es guardarà per a la teva propera visita.",
+    "themes": {
+      "obsidian": "Obsidiana",
+      "ocean": "Oceà",
+      "violet": "Violeta",
+      "emerald": "Esmeralda",
+      "amber": "Àmbar",
+      "crimson": "Carmesí",
+      "rose": "Rosa",
+      "graphite": "Grafit",
+      "cyber": "Ciber",
+      "midnight": "Mitjanit",
+      "teal": "Turquesa",
+      "copper": "Coure",
+      "slate": "Pissarra",
+      "lime": "Llima",
+      "sky": "Cel",
+      "mono": "Monocrom"
+    }
   }
 }

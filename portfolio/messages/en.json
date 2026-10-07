@@ -216,5 +216,28 @@
       "sky": "Sky",
       "mono": "Monochrome"
     }
+  },
+  "ThemeWelcome": {
+    "title": "Choose your favorite color",
+    "description": "Make this portfolio feel like home. Choose the theme you like the most.",
+    "footer": "Your choice will be saved for your next visit.",
+    "themes": {
+      "obsidian": "Obsidian",
+      "ocean": "Ocean",
+      "violet": "Violet",
+      "emerald": "Emerald",
+      "amber": "Amber",
+      "crimson": "Crimson",
+      "rose": "Rose",
+      "graphite": "Graphite",
+      "cyber": "Cyber",
+      "midnight": "Midnight",
+      "teal": "Turquoise",
+      "copper": "Copper",
+      "slate": "Slate",
+      "lime": "Lime",
+      "sky": "Sky",
+      "mono": "Monochrome"
+    }
   }
 }

@@ -47,7 +47,6 @@
   "Projects": {
     "title": "Proyectos",
     "subtitle": "Algunos de los proyectos en los que he trabajado",
-
     "viewProject": "Ver proyecto",
     "viewCode": "Ver código",
     "privateProject": "Proyecto interno",
@@ -58,9 +57,7 @@
 
     "plannerDetails": {
       "description": "Aplicación interna orientada a la planificación de técnicos y la gestión diaria de tareas. He trabajado en funcionalidades tanto de frontend como de backend relacionadas con el calendario, las tareas, los conflictos, clientes, usuarios y vacaciones.",
-
       "myWork": "Mi trabajo",
-
       "myWorkDescription": "Desarrollo de funcionalidades tanto en frontend como en backend, trabajando sobre diferentes áreas de la aplicación.",
 
       "areas": {
@@ -139,17 +136,14 @@
           "title": "Sistema de conflictos",
           "description": "Sistema interactivo para detectar y resolver conflictos de planificación antes de completar una operación."
         },
-
         "dailySummary": {
           "title": "Resumen diario",
           "description": "Vista centralizada para consultar las tareas de un técnico y su estado durante un día concreto."
         },
-
         "vacationManagement": {
           "title": "Gestión de vacaciones",
           "description": "Integración entre vacaciones, ausencias y planificación para evitar conflictos de asignación."
         },
-
         "clientManagement": {
           "title": "Gestión de clientes",
           "description": "Perfiles de clientes con validaciones, búsqueda unificada y gestión de información adicional."
@@ -159,10 +153,8 @@
 
     "pricePoster": "Price Poster",
     "pricePosterDescription": "Aplicación para gestionar y generar carteles de precios.",
-
     "api": "Spring Boot API",
     "apiDescription": "API REST desarrollada con Java, Spring Boot, JPA, MySQL y autenticación JWT.",
-
     "climbing": "Climbing API",
     "climbingDescription": "Proyecto de gestión de vías de escalada desarrollado con Java y JDBC, posteriormente ampliado con una API REST para consultar y consumir los datos."
   },
@@ -196,6 +188,30 @@
   "ThemeSelector": {
     "ariaLabel": "Cambiar paleta de colores",
     "title": "Tema de color",
+    "themes": {
+      "obsidian": "Obsidiana",
+      "ocean": "Océano",
+      "violet": "Violeta",
+      "emerald": "Esmeralda",
+      "amber": "Ámbar",
+      "crimson": "Carmesí",
+      "rose": "Rosa",
+      "graphite": "Grafito",
+      "cyber": "Ciber",
+      "midnight": "Medianoche",
+      "teal": "Turquesa",
+      "copper": "Cobre",
+      "slate": "Pizarra",
+      "lime": "Lima",
+      "sky": "Cielo",
+      "mono": "Monocromo"
+    }
+  },
+
+  "ThemeWelcome": {
+    "title": "Elige tu color favorito",
+    "description": "Haz que este portfolio se sienta como en casa. Elige el tema que más te guste.",
+    "footer": "Tu elección se guardará para tu próxima visita.",
     "themes": {
       "obsidian": "Obsidiana",
       "ocean": "Océano",
